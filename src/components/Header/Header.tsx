@@ -15,8 +15,8 @@ const navLinks = [
   },
 
   {
-    path: "/reviews",
-    display: "Review",
+    path: "/displayreviews",
+    display: "Reviews",
   },
   {
     path: "/contact",
@@ -54,6 +54,18 @@ function Header({ signOut, currentUser }: Props) {
                 {currentUser === null ? (
                   <>
                     <button
+                      onClick={() => {
+                        navigate("/signin");
+                      }}
+                      className=" d-flex align-items-center gap-1 login-button"
+                    >
+                      <i className="ri-login-circle-line"></i> Sign In
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    User Name: {currentUser.name}
+                    <button
                       className="signout-btn"
                       onClick={() => {
                         signOut();
@@ -61,20 +73,8 @@ function Header({ signOut, currentUser }: Props) {
                     >
                       Sign out
                     </button>
-                  </>
-                ) : (
-                  <>
-                    <li className="find-job-navbar-list-left-two">
-                      <NavLink to="/post">Create a new post</NavLink>
-                    </li>
-
-                    <button
-                      onClick={() => {
-                        navigate("/signin");
-                      }}
-                      className=" d-flex align-items-center gap-1 login-button"
-                    >
-                      <i className="ri-login-circle-line"></i> Sign In
+                    <button className="create-review-button">
+                      <NavLink to="/reviews">Create a new review</NavLink>
                     </button>
                   </>
                 )}

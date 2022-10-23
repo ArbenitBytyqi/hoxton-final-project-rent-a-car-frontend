@@ -19,7 +19,7 @@ export function SignInPage({ signIn }: Props) {
       email,
       password,
     };
-    fetch(`http://localhost:4000/login`, {
+    fetch(`http://localhost:4000/signin`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

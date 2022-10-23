@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../types";
 import "./review.css";
 
-type Reviews = {
+export type Reviews = {
   id: number;
   userId: number;
   rating: number;
@@ -36,6 +36,8 @@ export function Review({ currentUser, signOut }: Props) {
             content: event.target.text.value,
             userId: currentUser.id,
             rating: Number(event.target.rating.value),
+            imgUrl: event.target.imgUrl.value,
+            name: event.target.name.value,
           };
           fetch("http://localhost:4000/reviews", {
             method: "POST",
@@ -51,40 +53,32 @@ export function Review({ currentUser, signOut }: Props) {
         }}
       >
         <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Review Title?"
+        ></input>
+        <input
           type="textArea"
           name="content"
           id="text"
           placeholder="Your Review?"
           required
         ></input>
-
         <input
           type="number"
           name="rating"
           id="rating"
           placeholder="Rating?"
         ></input>
-        {/* <input
-          type="number"
-          name="userId"
-          id="userId"
-          placeholder="Your Id?"
-          required
-        ></input> */}
+        <input
+          type="text"
+          name="imgUrl"
+          id="imgUrl"
+          placeholder="Image?"
+        ></input>
         <button className="review-btn">POST</button>
       </form>
-      <p>
-        <h3>Reviews</h3>
-        {reviews.map((review: any) => (
-          <>
-            <div className="reviews">
-              <h5>{review.content}</h5>
-              <h5>{review.rating}</h5>
-              <h5>{review.createdAt}</h5>
-            </div>
-          </>
-        ))}
-      </p>
     </>
   );
 }

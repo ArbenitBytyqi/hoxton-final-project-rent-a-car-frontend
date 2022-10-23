@@ -13,6 +13,7 @@ import { Cars, User } from "./types";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Review } from "./pages/Review";
+import { DisplayReviews } from "./pages/DisplayReviews";
 
 export function App() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export function App() {
   function signIn(data: { user: any; token: string }) {
     setCurrentUser(data.user);
     localStorage.token = data.token;
-    navigate("/homepage");
+    navigate("/home");
   }
 
   function signOut() {
@@ -58,6 +59,7 @@ export function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cars" element={<CarListing />} />
         <Route path="/cars/:id" element={<CarDetails />} />
+        <Route path="/displayreviews" element={<DisplayReviews />} />
         <Route
           path="/reviews"
           element={<Review currentUser={currentUser} signOut={signOut} />}

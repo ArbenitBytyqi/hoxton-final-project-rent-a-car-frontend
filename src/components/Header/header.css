@@ -40,6 +40,22 @@
     color: #fff;
 }
 
+.create-review-button{
+    background-color: #000d6b;
+    color: whitesmoke;
+    padding: 2px;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.signout-btn{
+    background-color: #000d6b;
+    color: whitesmoke;
+    padding: 2px;
+    border-color: white;
+    border-radius: 5px;
+}
+
 /* Header Middle */
 
 .header__middle {
