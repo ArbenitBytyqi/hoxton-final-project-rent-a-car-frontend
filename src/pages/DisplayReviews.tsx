@@ -31,7 +31,6 @@ export function DisplayReviews({ currentUser }: Props) {
               <div className="blog__item">
                 <img src={review.imgUrl} alt="" className="w-100" />
                 <div className="blog__info p-3">
-                  <h6>@{currentUser.name}</h6>
                   <h6 className="review-title">Title:</h6>
                   <h4>{review.name}</h4>
                   <p></p>
