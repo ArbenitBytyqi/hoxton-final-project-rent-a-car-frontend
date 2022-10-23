@@ -2,12 +2,13 @@
     display: grid;
     grid-auto-flow: column;
     margin-left: 30px;
+    height: 700px;
 }
 .blog__item {
     border: 1px solid #000d6b;
     padding: 5px;
     border-radius: 5px;
-    height: 450px;
+    height: 550px;
     width: 300px;
   }
 

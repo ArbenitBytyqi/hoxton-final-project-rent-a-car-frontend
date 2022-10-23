@@ -9,6 +9,7 @@ import { User } from "../types";
 
 type Props = {
   currentUser: User;
+  signOut: () => void;
 };
 
 export function DisplayReviews({ currentUser }: Props) {
@@ -30,13 +31,13 @@ export function DisplayReviews({ currentUser }: Props) {
               <div className="blog__item">
                 <img src={review.imgUrl} alt="" className="w-100" />
                 <div className="blog__info p-3">
+                  <h6>@{currentUser.name}</h6>
                   <h6 className="review-title">Title:</h6>
-                  <h4 to={`/blogs/${review.name}`} className="blog__title">
-                    {review.name}
-                  </h4>
+                  <h4>{review.name}</h4>
                   <p></p>
                   <h6 className="review-description">Description:</h6>
                   <p className="section__description mt-3">{review.content}</p>
+
                   <button
                     className="delete-review-button"
                     onClick={() => {

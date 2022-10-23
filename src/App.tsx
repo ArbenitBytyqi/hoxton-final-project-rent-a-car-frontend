@@ -59,7 +59,10 @@ export function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cars" element={<CarListing />} />
         <Route path="/cars/:id" element={<CarDetails />} />
-        <Route path="/displayreviews" element={<DisplayReviews />} />
+        <Route
+          path="/displayreviews"
+          element={<DisplayReviews currentUser={currentUser} />}
+        />
         <Route
           path="/reviews"
           element={<Review currentUser={currentUser} signOut={signOut} />}
