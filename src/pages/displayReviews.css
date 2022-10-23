@@ -1,34 +1,17 @@
+.main-div{
+    display: grid;
+    grid-auto-flow: column;
+    margin-left: 30px;
+}
 .blog__item {
-    border: 1px solid #7c8a972e;
+    border: 1px solid #000d6b;
+    padding: 5px;
+    border-radius: 5px;
+    height: 450px;
+    width: 300px;
   }
-  
-  .blog__time {
-    border-top: 1px solid #7c8a972e;
-  }
-  
-  .read__more {
-    color: #f9a826;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .read__more:hover {
-    color: #f9a826;
-  }
-  
-  .blog__time span i {
-    color: #f9a826;
-  }
-  
-  .blog__author {
-    color: #000d6b;
-    font-weight: 600;
-  }
-  
-  .blog__author i {
-    font-weight: 500;
-  }
+
+  button
   
   .blog__title {
     text-decoration: none;
@@ -45,9 +28,26 @@
   .main-reviews-div{
     grid-auto-flow: row;
     justify-self: center;
-    margin-left: 590px;
+
   }
   
+.review-title{
+    color: #f9a826;
+}
+
+.review-description{
+    color: #f9a826;
+}
+
+.delete-review-button{
+    background-color: #000d6b;
+    color: whitesmoke;
+    padding: 2px;
+    border-color: white;
+    border-radius: 5px;
+    justify-self: flex-end;
+}
+
   @media only screen and (max-width: 768px) {
     .blog__time {
       padding-top: 5px !important;
